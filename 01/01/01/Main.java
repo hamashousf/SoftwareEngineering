@@ -13,13 +13,17 @@ public class Main{
 
         Scanner input = new Scanner(System.in);
         String input_string;
+        int amount_of_payment;
+        final int change;
+        List<Integer> change_list = new ArrayList<Integer>();
+        int balance;
 
         //INPUT
         System.out.printf("Please input the amount of payment(0-%d).", amount_of_received);
         for(int i=0; i<MAX_RETRIES; i++){
             try{
                 input_string = input.nextLine();
-                int amount_of_payment = Integer.parseInt(input_string);
+                amount_of_payment = Integer.parseInt(input_string);
                 if((amount_of_payment < 0) || (amount_of_payment > amount_of_received)){
                     System.out.printf("Please input a number(0-%d). Remaining Attempts: %d\n", amount_of_received, MAX_RETRIES-i);
                     continue;
@@ -31,8 +35,15 @@ public class Main{
         }
 
         //CALCULATION
+        change = amount_of_received - amount_of_payment;
+        balance = change;
         for(int currency : currencies){
-            if()
+            if(excluded_currencies.contains(currency)){
+                change_list.add(0);
+                continue;
+            }
+            change_list.add(balance / currency);
+            balance %= currency;
         }
     }
 }
