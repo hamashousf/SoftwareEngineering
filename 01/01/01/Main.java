@@ -20,7 +20,7 @@ public class Main{
                 input_string = input.nextLine();
                 amount_of_payment = Integer.parseInt(input_string);
             }catch(NumberFormatException exception){
-                System.out.println("");
+                System.out.printf("Invalid value. Remaining Attempts: %d", MAX_RETRIES-i);
             }
         }
     }
