@@ -13,7 +13,7 @@ public class Main{
 
         Scanner input = new Scanner(System.in);
         String input_string;
-        int amount_of_payment;
+        int amount_of_payment = 0;
         final int change;
         List<Integer> change_list = new ArrayList<Integer>();
         int balance;
