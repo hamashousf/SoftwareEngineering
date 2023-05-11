@@ -19,7 +19,7 @@ public class Main{
             }
         }
         scanner.close();
-        for(int i=2; i < target; i++){
+        for(int i=2; i <= target; i++){
             isPrime = true;
             for(int primeNumber : primeNumbers){
                 if(i % primeNumber == 0){
